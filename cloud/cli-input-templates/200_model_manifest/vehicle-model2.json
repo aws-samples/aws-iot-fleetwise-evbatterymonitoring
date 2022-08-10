@@ -1,0 +1,16 @@
+{
+  "name": "blog-modelmanifest-02",
+  "signalCatalogArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:signal-catalog/main-signal-catalog",
+  "description": "Sample vehicle model 2",
+  "nodes": [
+    "EVBatterySample.BMS.BatteryTemperature",
+    "EVBatterySample.BMS.BatteryElectrical_i",
+    "EVBatterySample.BMS.BatteryElectrical_v",
+    "EVBatterySample.BMS.StateOfCharge",
+    "EVBatterySample.BMS.Distance",
+    "EVBatterySample.Drivetrain.ActualVehicleSpeed",
+    "EVBatterySample.Drivetrain.MotorCommand",
+    "VehicleVIN",
+    "OBD.EngineSpeed"
+  ]
+}

@@ -1,0 +1,106 @@
+VERSION ""
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+
+BS_:
+
+BU_:
+
+BO_ 1701 Main_ActualVehicleSpeed_kph: 8 Vector__XXX
+ SG_ Main_ActualVehicleSpeed_kph : 0|24@1+ (0.5,0.0) [0|320] "kph" Vector__XXX
+
+BO_ 1702 Main_Battery_Temperature_C: 8 Vector__XXX
+ SG_ Main_Battery_Temperature_C : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
+
+BO_ 1703 Main_Battery_electrical_i: 8 Vector__XXX
+  SG_ Main_Battery_electrical_i : 0|24@1+ (0.5,-100.0) [-100|200] "i" Vector__XXX
+
+BO_ 1704 Main_Battery_electrical_v: 8 Vector__XXX
+ SG_ Main_Battery_electrical_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
+
+BO_ 1705 Main_BrakeCommand_value: 8 Vector__XXX
+ SG_ Main_BrakeCommand_value : 0|24@1+ (1.0,-1.0) [-1|1] "" Vector__XXX
+
+BO_ 1706 Main_Distance_km: 8 Vector__XXX
+  SG_ Main_Distance_km : 0|24@1+ (0.01,0.0) [0|9999999] "km" Vector__XXX
+
+BO_ 1707 Main_MG_i: 8 Vector__XXX
+  SG_ Main_MG_i : 0|24@1+ (0.5,-100.0) [-100|500] "i" Vector__XXX
+
+BO_ 1708 Main_MG_v: 8 Vector__XXX
+    SG_ Main_MG_v : 0|24@1+ (0.25,-40.0) [-40|1000] "v" Vector__XXX
+
+BO_ 1709 Main_MotorCommand_value: 8 Vector__XXX
+  SG_ Main_MotorCommand_value : 0|24@1+ (0.5,-40.0) [-40|500] "" Vector__XXX
+
+BO_ 1710 Main_Range_km: 8 Vector__XXX
+  SG_ Main_Range_km : 0|24@1+ (0.5,0.0) [0|500] "km" Vector__XXX
+
+BO_ 1711 Main_RefereceVehicleSpeed_kph: 8 Vector__XXX
+  SG_ Main_RefereceVehicleSpeed_kph : 0|24@1+ (0.25,-320.0) [-320|320] "kph" Vector__XXX
+
+BO_ 1712 Main_State_of_Charge_SoC: 8 Vector__XXX
+ SG_ Main_State_of_Charge_SoC : 0|24@1+ (0.01,0.0) [0|1] "SoC" Vector__XXX
+
+BO_ 1713 Power_kW: 8 Vector__XXX
+ SG_ Power_kW : 0|24@1+ (0.01,-10.0) [-10|100] "kW" Vector__XXX
+
+BO_ 1714 dT_hr: 8 Vector__XXX
+  SG_ dT_hr : 0|24@1+ (0.01,0.0) [0|1000] "hr" Vector__XXX
+
+BO_ 1715 Energy_kWhr: 8 Vector__XXX
+ SG_ Energy_kWhr : 0|24@1+ (0.01,-10.0) [-10|100] "kWhr" Vector__XXX
+
+BO_ 1716 Cumulative_Energy_Used_kWhr: 8 Vector__XXX
+ SG_ Cumulative_Energy_Used_kWhr : 0|24@1+ (0.01,-10.0) [-10|100] "kWhr" Vector__XXX
+
+
+BA_DEF_ SG_  "SignalType" STRING ;
+BA_DEF_ SG_  "SignalLongName" STRING ;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 10000;
+BA_DEF_DEF_  "SignalType" "";
+BA_DEF_DEF_  "SignalLongName" "";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 1701 50;
+BA_ "GenMsgCycleTime" BO_ 1702 50;
+BA_ "GenMsgCycleTime" BO_ 1703 50;
+BA_ "GenMsgCycleTime" BO_ 1704 50;
+BA_ "GenMsgCycleTime" BO_ 1705 50;
+BA_ "GenMsgCycleTime" BO_ 1706 50;
+BA_ "GenMsgCycleTime" BO_ 1707 50;
+BA_ "GenMsgCycleTime" BO_ 1708 50;
+BA_ "GenMsgCycleTime" BO_ 1709 50;
+BA_ "GenMsgCycleTime" BO_ 1710 50;
+BA_ "GenMsgCycleTime" BO_ 1711 50;
+BA_ "GenMsgCycleTime" BO_ 1712 50;
+BA_ "GenMsgCycleTime" BO_ 1713 50;
+BA_ "GenMsgCycleTime" BO_ 1714 50;
+BA_ "GenMsgCycleTime" BO_ 1715 50;
+BA_ "GenMsgCycleTime" BO_ 1716 50;

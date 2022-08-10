@@ -1,0 +1,9 @@
+{
+  "associationBehavior": "ValidateIotThingExists",
+  "vehicleName": "blog-vehicle-01",
+  "modelManifestArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:model-manifest/blog-modelmanifest-01",
+  "decoderManifestArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:decoder-manifest/blog-decodermanifest-01",
+  "attributes": {
+    "VehicleVIN": "WAUEH78E07A102764"
+  }
+}

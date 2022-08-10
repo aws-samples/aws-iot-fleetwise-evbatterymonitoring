@@ -1,0 +1,4 @@
+{
+  "RoleName": "AWSIoTFleetWiseServiceRole",
+  "PolicyArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:policy/AWSIoTFleetwiseIAMUserPolicy"
+}

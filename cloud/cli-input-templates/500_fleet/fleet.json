@@ -1,0 +1,5 @@
+{
+  "fleetId": "blog-fleet",
+  "signalCatalogArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:signal-catalog/main-signal-catalog",
+  "description": "Example fleet"
+}

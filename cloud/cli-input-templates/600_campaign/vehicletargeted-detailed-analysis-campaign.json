@@ -1,0 +1,56 @@
+{
+  "name": "vehicletargeted-detailed-analysis-campaign",
+  "signalCatalogArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:signal-catalog/main-signal-catalog",
+  "targetArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:vehicle/blog-vehicle-01",
+
+  "collectionScheme": {
+    "timeBasedCollectionScheme": {
+      "periodMs": 10000
+    }
+  },
+  "diagnosticsMode": "SEND_ACTIVE_DTCS",
+  "dataExtraDimensions": ["VehicleVIN"],
+  "spoolingMode": "TO_DISK",
+  "signalsToCollect": [
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.Drivetrain.ActualVehicleSpeed"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.BMS.BatteryTemperature"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.BMS.BatteryElectrical_i"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.BMS.BatteryElectrical_v"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.BMS.StateOfCharge"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.BMS.Distance"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "EVBatterySample.Drivetrain.MotorCommand"
+    },
+    {
+      "maxSampleCount": 100,
+      "minimumSamplingIntervalMs": 100,
+      "name": "OBD.EngineSpeed"
+    }
+  ]
+}
