@@ -1,0 +1,22 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "timestreamIngestion",
+            "Effect": "Allow",
+            "Action": [
+                "timestream:WriteRecords",
+                "timestream:Select"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "timestreamDescribeEndpoint",
+            "Effect": "Allow",
+            "Action": [
+                "timestream:DescribeEndpoints"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -16,6 +16,8 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+import code
+import readline
 import canigen
 import time
 import datetime
@@ -23,14 +25,25 @@ import argparse
 import pandas as pd
 import logging
 
-parser = argparse.ArgumentParser(description='Generates SocketCAN messages for AWS IoT FleetWise demo')
-parser.add_argument('inputfilename', type=str,  help='Path to CSV file to process')
-parser.add_argument('--dbcfile', type=str,  help='DBC File for encoding', required=True )
-parser.add_argument('--obdconfig', type=str,  help='OBD Configuration', required=True )
-parser.add_argument('-i', '--interface', default='vcan0', help='CAN interface, e.g. vcan0')
-parser.add_argument('--verbose', '-v', action='count', default=1, help='Provide more output')
-parser.add_argument('--delimiter', '-d', default=",", help='Delimiter character')
-parser.add_argument('-s', '--sleep-interval-ms', default=200, help='Sleep interval in ms')
+parser = argparse.ArgumentParser(
+    description='Generates SocketCAN messages for AWS IoT FleetWise demo')
+parser.add_argument('inputfilename', type=str,
+                    help='Path to CSV file to process')
+parser.add_argument('--dbcfile', type=str,
+                    help='DBC File for encoding', required=True)
+parser.add_argument('--obdconfig', type=str,
+                    help='OBD Configuration', required=False)
+parser.add_argument('-i', '--interface', default='vcan0',
+                    help='CAN interface, e.g. vcan0')
+parser.add_argument('--verbose', '-v', action='count',
+                    default=1, help='Provide more output')
+parser.add_argument('--delimiter', '-d', default=",",
+                    help='Delimiter character')
+parser.add_argument('-s', '--sleep-interval-ms',
+                    default=200, help='Sleep interval in ms')
+parser.add_argument('--dryrun', action='count',
+                    default=1, help='Dry run, i.e. no CAN messages are sent')
+
 args = parser.parse_args()
 
 # Logging
@@ -44,45 +57,37 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(mes
 logger.info(f"Loading input file {args.inputfilename}")
 df = pd.read_csv(args.inputfilename, delimiter=args.delimiter, quotechar='|')
 
-
+# Initialize CAN simulation
 can_sim = canigen.canigen(
     interface=args.interface,
     database_filename=args.dbcfile,
-    obd_config_filename=args.obdconfig)
+    #    obd_config_filename=args.obdconfig
+)
 
 
-def set_with_print(func, name, val):
-    print(str(datetime.datetime.now())+" Set "+name+" to "+str(val))
-    func(name, val)
+# Initialize variables
+is_dryrun = args.dryrun > 1
+count_successfull_rows = 0
+count_successfull_files = 0
 
-success_count = 0
-failure_count = 0
-
-counter = 0 
-
-while True:    
+# Iterate over the CSV file and write data to CAN bus
+while True:
     for device_row in df.itertuples(index=False, name="CANRaw"):
-            time.sleep(int(args.sleep_interval_ms)/1000)
-            logger.info(f"Ingesting data {device_row}")
-            # set_with_print(can_sim.set_sig, 'NAME FROM DBC FILE', getattr(device_row,"NAME FROM CSV FILE"))
-            set_with_print(can_sim.set_sig, 'Main_Battery_Temperature_C', getattr(device_row,"Main_Battery_Temperature_C"))
-            success_count = 1
-            if counter < 20:
-                can_sim.set_dtc('ECM_DTC1', 1)
-                can_sim.set_dtc('ECM_DTC2', 1)
-                can_sim.set_dtc('TCU_DTC1', 1)
-                can_sim.set_dtc('TCU_DTC2', 1)
-                can_sim.set_pid('ENGINE_SPEED', 49)
+        time.sleep(int(args.sleep_interval_ms)/1000)
+        logger.info(f"Processing data row {device_row}")
 
-            if counter >= 20:
-                can_sim.set_dtc('ECM_DTC1', 0)
-                can_sim.set_dtc('ECM_DTC2', 0)
-                can_sim.set_dtc('TCU_DTC1', 0)
-                can_sim.set_dtc('TCU_DTC2', 0)
-                can_sim.set_pid('ENGINE_SPEED', 49)
+        # Iterate over all signal names in the CSV file
+        for signal_name in df.columns:
+            signal_value = getattr(device_row, signal_name)
+            logger.info(
+                f"[{count_successfull_rows} rows] Ingesting signal {signal_name} with value {signal_value}")
+            if is_dryrun:
+                logger.info(f"Dry run, skipping the ingestion")
+                continue
+            else:
+                can_sim.set_sig(signal_name, signal_value)
 
-            if counter == 40:
-                counter = 0
+        count_successfull_rows += 1
+    count_successfull_files += 1
 
-            counter = counter + 1
 can_sim.stop()
