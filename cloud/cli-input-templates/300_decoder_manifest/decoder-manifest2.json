@@ -1,6 +1,6 @@
 {
   "name": "blog-decodermanifest-02",
-  "modelManifestArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:model-manifest/blog-modelmanifest-01",
+  "modelManifestArn": "arn:aws:iotfleetwise:${AWS_REGION}:${AWS_ACCOUNT_ID}:model-manifest/blog-modelmanifest-02",
   "description": "Sample decoder manifest 2",
   "networkInterfaces": [
     {

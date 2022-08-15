@@ -1,5 +1,5 @@
 #! /bin/sh
-ROOTDIR=/home/ubuntu/aws-iot-fleetwise-batterymonitoring/simulatedvehicle/canreplay
+ROOTDIR=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay
 
 if [ -f /etc/systemd/system/evcansimulation.service ]; then
     sudo \cp -f $ROOTDIR/service/evcansimulation.service /etc/systemd/system/evcansimulation.service

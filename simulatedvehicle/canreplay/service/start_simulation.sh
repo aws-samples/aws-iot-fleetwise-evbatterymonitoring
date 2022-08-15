@@ -1,10 +1,10 @@
 #!/bin/sh
-ROOTDIR=/home/ubuntu/aws-iot-fleetwise-batterymonitoring/simulatedvehicle/canreplay
-python3 $ROOTDIR/bin/can_replay_v2.py \
-          $ROOTDIR/config/evdemo_tempissue.csv \
+ROOTDIR=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay
+python3 $ROOTDIR/bin/can_replay.py \
+          $ROOTDIR/config/ev/evdemo_tempissue.csv \
          --sleep-interval 1000 \
-         --dbcfile $ROOTDIR/config/evsample.dbc \
-         --obdconfig $ROOTDIR/config/evdemo_obd_config.json
+         --dbcfile $ROOTDIR/config/ev/evsample.dbc \
+         --obdconfig $ROOTDIR/config/ev/evdemo_obd_config.json
 
 
 

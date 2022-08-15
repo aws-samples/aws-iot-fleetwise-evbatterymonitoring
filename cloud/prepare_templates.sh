@@ -1,5 +1,9 @@
 #/bin/bash
 set -e
+
+# Install envsubst for Amazon Linux 2
+sudo yum install gettext -y
+
 # Check for envsubst
 if ! command -v envsubst &> /dev/null
 then
