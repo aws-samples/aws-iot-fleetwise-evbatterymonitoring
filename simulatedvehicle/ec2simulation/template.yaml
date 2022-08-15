@@ -705,13 +705,13 @@ Mappings:
       AMIID: ami-0327006c87b23e535
   FleetSizeEc2InstanceTypeMap:
     "1":
-      InstanceType: m6g.16xlarge
+      InstanceType: m6g.8xlarge
     "2":
-      InstanceType: m6g.4xlarge
+      InstanceType: m6g.8xlarge
     "10":
-      InstanceType: m6g.4xlarge
+      InstanceType: m6g.16xlarge
     "100":
-      InstanceType: m6g.42xlarge
+      InstanceType: m6g.16xlarge
     "1000":
       InstanceType: m6g.16xlarge
 Outputs:
