@@ -28,7 +28,7 @@ Parameters:
   SourceUrlBatteryMonitoring:
     Description: Source Git clone URL for Battery Monitoring Sample repo (leave as default)
     Type: String
-    Default: https://temp-978572884825.s3.amazonaws.com/aws-iot-fleetwise-batterymonitoring.tar.gz
+    Default: https://temp-978572884825.s3.amazonaws.com/aws-iot-fleetwise-evbatterymonitoring.tar.gz
   Ec2KeyPair:
     Description: Name of SSH key pair (leave blank for none)
     Type: String
@@ -167,7 +167,7 @@ Resources:
 
           # On error, signal back to cfn:
           error_handler() {
-            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance --region ${AWS::Region}
+            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance1 --region ${AWS::Region}
           }
           trap error_handler ERR
 
@@ -202,11 +202,11 @@ Resources:
           cd /home/ubuntu
           if echo ${SourceUrlBatteryMonitoring} | grep -q 'github'; then
             echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
-            sudo -u ubuntu git clone ${SourceUrl} aws-iot-fleetwise-batterymonitoring
+            sudo -u ubuntu git clone ${SourceUrl} aws-iot-fleetwise-evbatterymonitoring
           else
             echo "Installing via Wget sample from ${SourceUrlBatteryMonitoring}"
-            wget ${SourceUrlBatteryMonitoring}  -O /tmp/aws-iot-fleetwise-batterymonitoring.tar.gz
-            sudo -u ubuntu tar xvf /tmp/aws-iot-fleetwise-batterymonitoring.tar.gz
+            wget ${SourceUrlBatteryMonitoring}  -O /tmp/aws-iot-fleetwise-evbatterymonitoring.tar.gz
+            sudo -u ubuntu tar xvf /tmp/aws-iot-fleetwise-evbatterymonitoring.tar.gz
           fi
 
 
@@ -283,7 +283,7 @@ Resources:
           sudo systemctl start evcansimulation.service
 
           # Signal init complete:
-          /opt/aws/bin/cfn-signal --stack ${AWS::StackName} --resource Ec2Instance --region ${AWS::Region}
+          /opt/aws/bin/cfn-signal --stack ${AWS::StackName} --resource Ec2Instance1 --region ${AWS::Region}
 
   Ec2Instance2:
     Type: AWS::EC2::Instance
@@ -339,7 +339,7 @@ Resources:
 
           # On error, signal back to cfn:
           error_handler() {
-            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance --region ${AWS::Region}
+            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance2 --region ${AWS::Region}
           }
           trap error_handler ERR
 
@@ -374,11 +374,11 @@ Resources:
           cd /home/ubuntu
           if echo ${SourceUrlBatteryMonitoring} | grep -q 'github'; then
             echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
-            sudo -u ubuntu git clone ${SourceUrl} aws-iot-fleetwise-batterymonitoring
+            sudo -u ubuntu git clone ${SourceUrl} aws-iot-fleetwise-evbatterymonitoring
           else
             echo "Installing via Wget sample from ${SourceUrlBatteryMonitoring}"
-            wget ${SourceUrlBatteryMonitoring}  -O /tmp/aws-iot-fleetwise-batterymonitoring.tar.gz
-            sudo -u ubuntu tar xvf /tmp/aws-iot-fleetwise-batterymonitoring.tar.gz
+            wget ${SourceUrlBatteryMonitoring}  -O /tmp/aws-iot-fleetwise-evbatterymonitoring.tar.gz
+            sudo -u ubuntu tar xvf /tmp/aws-iot-fleetwise-evbatterymonitoring.tar.gz
           fi
 
 
@@ -448,14 +448,14 @@ Resources:
           # Install FWE
           ./tools/install-fwe.sh
 
-          ROOTDIR=/home/ubuntu/aws-iot-fleetwise-batterymonitoring/simulatedvehicle/canreplay
+          ROOTDIR=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay
           sudo \cp -f $ROOTDIR/service/evcansimulation.service /etc/systemd/system/evcansimulation.service
 
           sudo systemctl enable evcansimulation.service
           sudo systemctl start evcansimulation.service
 
           # Signal init complete:
-          /opt/aws/bin/cfn-signal --stack ${AWS::StackName} --resource Ec2Instance --region ${AWS::Region}
+          /opt/aws/bin/cfn-signal --stack ${AWS::StackName} --resource Ec2Instance2 --region ${AWS::Region}
 
   TimestreamDatabase:
     Type: AWS::Timestream::Database
