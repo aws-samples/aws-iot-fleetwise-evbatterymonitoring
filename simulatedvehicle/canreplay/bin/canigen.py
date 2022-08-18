@@ -132,7 +132,7 @@ class canigen:
                 else:
                     val = self.__values['sig'][sig.name]
                 vals[sig.name] = 0 if val is None else val
-            data = msg.encode(self.__values['sig'])
+            data = msg.encode(vals)
             if not self.__output_file is None:
                 self.__write_frame(msg, data)
             else:

@@ -58,12 +58,13 @@ logger.info(f"Loading input file {args.inputfilename}")
 df = pd.read_csv(args.inputfilename, delimiter=args.delimiter, quotechar='|')
 
 # Initialize CAN simulation
+logger.info(f"Loading DBC file {args.dbcfile} for interface {args.interface}")
+
 can_sim = canigen.canigen(
     interface=args.interface,
     database_filename=args.dbcfile,
     #    obd_config_filename=args.obdconfig
 )
-
 
 # Initialize variables
 is_dryrun = args.dryrun > 1
@@ -72,15 +73,17 @@ count_successfull_files = 0
 
 # Iterate over the CSV file and write data to CAN bus
 while True:
+    count_successfull_rows = 0
     for device_row in df.itertuples(index=False, name="CANRaw"):
         time.sleep(int(args.sleep_interval_ms)/1000)
         logger.info(f"Processing data row {device_row}")
 
         # Iterate over all signal names in the CSV file
         for signal_name in df.columns:
-            signal_value = getattr(device_row, signal_name)
+
+            signal_value = float(getattr(device_row, signal_name))
             logger.info(
-                f"[{count_successfull_rows} rows] Ingesting signal {signal_name} with value {signal_value}")
+                f"[iteration {count_successfull_files}, row {count_successfull_rows}] Setting CAN {signal_name} to value {signal_value}")
             if is_dryrun:
                 logger.info(f"Dry run, skipping the ingestion")
                 continue

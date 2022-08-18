@@ -3,7 +3,7 @@ ROOTDIR=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canr
 python3 $ROOTDIR/bin/can_replay.py \
           $ROOTDIR/config/ev/evdemo_tempissue.csv \
          --sleep-interval 1000 \
-         --dbcfile $ROOTDIR/config/ev/evsample.dbc \
+         --dbcfile $ROOTDIR/config/ev/evdemo.dbc \
          --obdconfig $ROOTDIR/config/ev/evdemo_obd_config.json
 
 

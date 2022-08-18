@@ -28,13 +28,13 @@ Parameters:
   SourceUrlBatteryMonitoring:
     Description: Source Git clone URL for Battery Monitoring Sample repo (leave as default)
     Type: String
-    Default: https://temp-978572884825.s3.amazonaws.com/aws-iot-fleetwise-evbatterymonitoring.tar.gz
+    Default: https://temp-978572884825.s3.amazonaws.com/aws-iot-fleetwise-batterymonitoring.tar.gz
   Ec2KeyPair:
     Description: Name of SSH key pair (leave blank for none)
     Type: String
     Default: ""
   FleetSize:
-    Description: "Number of vehicles to create. The EC2 instance type is chosen accordingly: 1-10: m6g.xlarge, 100: m6g.2xlarge, 1000: m6g.16xlarge"
+    Description: "Number of vehicles to create (this version of template only supports 1)"
     Type: String
     Default: "1"
     AllowedValues:
@@ -411,7 +411,7 @@ Resources:
             ./tools/configure-fwe.sh \
               --input-config-file "configuration/static-config.json" \
               --output-config-file "/etc/aws-iot-fleetwise/config-0.json" \
-              --vehicle-name "blog-vehicle-01" \
+              --vehicle-name "blog-vehicle-02" \
               --endpoint-url "${IoTThing2.iotEndpoint}" \
               --topic-prefix '${IoTMqttTopicPrefix}' \
               --can-bus0 "vcan0"
@@ -728,9 +728,9 @@ Outputs:
   Ec2Instance2PublicIp:
     Condition: KeyPairSpecifiedCondition
     Description: "EC2 instance 2 public IP address"
-    Value: !GetAtt Ec2Instance1.PublicIp
+    Value: !GetAtt Ec2Instance2.PublicIp
 
   Ec2Instance2SSH:
     Condition: KeyPairSpecifiedCondition
     Description: "EC2 instance 2 SSH access command"
-    Value: !Sub ssh -i ${Ec2KeyPair}.pem ubuntu@${Ec2Instance1.PublicIp}
+    Value: !Sub ssh -i ${Ec2KeyPair}.pem ubuntu@${Ec2Instance2.PublicIp}
