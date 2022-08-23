@@ -1,4 +1,0 @@
-{
-  "RoleName": "AWSIoTFleetWiseServiceRole",
-  "PolicyArn": "arn:aws:iam::637431153097:policy/AWSIoTFleetwiseIAMUserPolicy"
-}

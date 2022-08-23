@@ -1,5 +1,0 @@
-{
-  "fleetId": "blog-fleet",
-  "signalCatalogArn": "arn:aws:iotfleetwise:eu-central-1:637431153097:signal-catalog/main-signal-catalog",
-  "description": "Example fleet"
-}
