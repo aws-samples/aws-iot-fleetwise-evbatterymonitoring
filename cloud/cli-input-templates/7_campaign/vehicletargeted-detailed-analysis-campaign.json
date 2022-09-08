@@ -11,7 +11,7 @@
       "triggerMode": "ALWAYS"
     }
   },
-  "diagnosticsMode": "SEND_ACTIVE_DTCS",
+  "diagnosticsMode": "OFF",
   "dataExtraDimensions": ["VehicleVIN"],
   "spoolingMode": "TO_DISK",
   "signalsToCollect": [

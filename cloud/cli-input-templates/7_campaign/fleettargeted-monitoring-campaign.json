@@ -7,12 +7,12 @@
       "periodMs": 60000
     }
   },
-  "diagnosticsMode": "SEND_ACTIVE_DTCS",
+  "diagnosticsMode": "OFF",
   "dataExtraDimensions": ["VehicleVIN"],
   "spoolingMode": "TO_DISK",
   "signalsToCollect": [
     {
-      "maxSampleCount": 1,
+      "maxSampleCount": 100,
       "minimumSamplingIntervalMs": 100,
       "name": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage"
     },

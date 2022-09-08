@@ -18,6 +18,41 @@
     },
     {
       "branch": {
+        "description": "BP 1",
+
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01"
+      }
+    },
+    {
+      "branch": {
+        "description": "BP 2",
+
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02"
+      }
+    },
+    {
+      "branch": {
+        "description": "BP 01 / Cell 001",
+
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.Cell001"
+      }
+    },
+    {
+      "branch": {
+        "description": "BP 02 / Cell 001",
+
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.Cell001"
+      }
+    },
+    {
+      "branch": {
+        "description": "Relay 01",
+
+        "fullyQualifiedName": "EVBatterySample.BMS.Relay01"
+      }
+    },
+    {
+      "branch": {
         "description": "Drivetrain",
 
         "fullyQualifiedName": "EVBatterySample.Drivetrain"

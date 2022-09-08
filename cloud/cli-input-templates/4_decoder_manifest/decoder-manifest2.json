@@ -34,7 +34,7 @@
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1701,
+        "messageId": 100,
         "offset": 0.0,
         "startBit": 0
       },
@@ -49,7 +49,7 @@
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1709,
+        "messageId": 101,
         "offset": -40.0,
         "startBit": 0
       },
@@ -60,12 +60,12 @@
 
     {
       "canSignal": {
-        "name": "BatteryPackVoltag",
+        "name": "BatteryPackVoltage",
         "factor": 0.25,
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1704,
+        "messageId": 201,
         "offset": -100.0,
         "startBit": 0
       },
@@ -81,7 +81,7 @@
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1704,
+        "messageId": 202,
         "offset": -100.0,
         "startBit": 0
       },
@@ -97,7 +97,7 @@
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1702,
+        "messageId": 301,
         "offset": -40.0,
         "startBit": 0
       },
@@ -113,11 +113,11 @@
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1702,
+        "messageId": 401,
         "offset": -40.0,
         "startBit": 0
       },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.Cell002.CellTemperature",
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.Cell001.CellTemperature",
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
     },
@@ -129,7 +129,7 @@
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1706,
+        "messageId": 500,
         "offset": 0.0,
         "startBit": 0
       },
