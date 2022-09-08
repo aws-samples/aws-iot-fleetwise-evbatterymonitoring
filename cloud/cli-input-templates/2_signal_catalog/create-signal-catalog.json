@@ -37,8 +37,18 @@
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.BatteryTemperature",
-        "max": 87.5,
+        "fullyQualifiedName": "EVBatterySample.Drivetrain.MotorCommand",
+        "max": 500.0,
+        "min": -40.0,
+
+        "unit": ""
+      }
+    },
+    {
+      "sensor": {
+        "dataType": "DOUBLE",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.Cell001.CellTemperature",
+        "max": 120,
         "min": -40.0,
 
         "unit": "degC"
@@ -47,17 +57,18 @@
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.BatteryElectrical_i",
-        "max": 200.0,
-        "min": -100.0,
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.Cell001.CellTemperature",
+        "max": 120,
+        "min": -40.0,
 
-        "unit": "i"
+        "unit": "degC"
       }
     },
+
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.BatteryElectrical_v",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage",
         "max": 1000.0,
         "min": -100.0,
 
@@ -67,29 +78,19 @@
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.StateOfCharge",
-        "max": 1.0,
-        "min": 0.0,
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage",
+        "max": 1000.0,
+        "min": -100.0,
 
-        "unit": "SoC"
+        "unit": "v"
       }
     },
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.Distance",
-        "max": 9999999.0,
+        "fullyQualifiedName": "EVBatterySample.BMS.Relay01.Status",
+        "max": 255.0,
         "min": 0.0,
-
-        "unit": "km"
-      }
-    },
-    {
-      "sensor": {
-        "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.Drivetrain.MotorCommand",
-        "max": 500.0,
-        "min": -40.0,
 
         "unit": ""
       }
@@ -117,7 +118,6 @@
         "dataType": "DOUBLE",
         "description": "PID 0C - Engine speed measured as rotations per minute",
         "fullyQualifiedName": "OBD.EngineSpeed",
-
         "unit": "rpm"
       }
     }

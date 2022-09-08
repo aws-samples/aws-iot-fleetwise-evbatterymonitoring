@@ -28,23 +28,6 @@
 
   "signalDecoders": [
     {
-      "fullyQualifiedName": "OBD.EngineSpeed",
-      "interfaceId": "2",
-      "obdSignal": {
-        "bitMaskLength": 8,
-        "bitRightShift": 0,
-        "byteLength": 2,
-        "offset": 0.0,
-        "pid": 12,
-        "pidResponseLength": 2,
-        "scaling": 0.25,
-        "serviceMode": 1,
-        "startByte": 0
-      },
-      "type": "OBD_SIGNAL"
-    },
-
-    {
       "canSignal": {
         "name": "ActualVehicleSpeed_kph",
         "factor": 0.5,
@@ -59,71 +42,6 @@
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
     },
-
-    {
-      "canSignal": {
-        "name": "Battery_electrical_i",
-        "factor": 0.5,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 1703,
-        "offset": -100.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryElectrical_i",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
-    {
-      "canSignal": {
-        "name": "Battery_electrical_v",
-        "factor": 0.25,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 1704,
-        "offset": -100.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryElectrical_v",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
-    {
-      "canSignal": {
-        "name": "Battery_Temperature_C",
-        "factor": 0.5,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 1702,
-        "offset": -40.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryTemperature",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
-    {
-      "canSignal": {
-        "name": "Distance_km",
-        "factor": 0.01,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 1706,
-        "offset": 0.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.Distance",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
     {
       "canSignal": {
         "name": "MotorCommand_value",
@@ -142,18 +60,99 @@
 
     {
       "canSignal": {
-        "name": "State_of_Charge_SoC",
+        "name": "BatteryPackVoltag",
+        "factor": 0.25,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 1704,
+        "offset": -100.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+
+    {
+      "canSignal": {
+        "name": "BatteryPackVoltage",
+        "factor": 0.25,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 1704,
+        "offset": -100.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+
+    {
+      "canSignal": {
+        "name": "CellTemperature",
+        "factor": 0.5,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 1702,
+        "offset": -40.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.Cell001.CellTemperature",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+
+    {
+      "canSignal": {
+        "name": "CellTemperature",
+        "factor": 0.5,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 1702,
+        "offset": -40.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.Cell002.CellTemperature",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+
+    {
+      "canSignal": {
+        "name": "RelayStatus",
         "factor": 0.01,
         "isBigEndian": false,
         "isSigned": false,
         "length": 24,
-        "messageId": 1712,
+        "messageId": 1706,
         "offset": 0.0,
         "startBit": 0
       },
-      "fullyQualifiedName": "EVBatterySample.BMS.StateOfCharge",
+      "fullyQualifiedName": "EVBatterySample.BMS.Relay01.Status",
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
+    },
+
+    {
+      "fullyQualifiedName": "OBD.EngineSpeed",
+      "interfaceId": "2",
+      "obdSignal": {
+        "bitMaskLength": 8,
+        "bitRightShift": 0,
+        "byteLength": 2,
+        "offset": 0.0,
+        "pid": 12,
+        "pidResponseLength": 2,
+        "scaling": 0.25,
+        "serviceMode": 1,
+        "startByte": 0
+      },
+      "type": "OBD_SIGNAL"
     }
   ]
 }

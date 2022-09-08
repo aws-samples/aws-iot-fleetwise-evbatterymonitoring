@@ -33,55 +33,27 @@ BS_:
 
 BU_:
 
-xxx
-
-BO_ 1701 ActualVehicleSpeed_kph: 8 Vector__XXX
+BO_ 1000 ActualVehicleSpeed_kph: 8 Vector__XXX
  SG_ ActualVehicleSpeed_kph : 0|24@1+ (0.5,0.0) [0|320] "kph" Vector__XXX
 
-BO_ 1702 Battery_Temperature_C: 8 Vector__XXX
- SG_ Battery_Temperature_C : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
-
-BO_ 1703 Battery_electrical_i: 8 Vector__XXX
-  SG_ Battery_electrical_i : 0|24@1+ (0.5,-100.0) [-100|200] "i" Vector__XXX
-
-BO_ 1704 Battery_electrical_v: 8 Vector__XXX
- SG_ Battery_electrical_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
-
-BO_ 1705 BrakeCommand_value: 8 Vector__XXX
- SG_ BrakeCommand_value : 0|24@1+ (1.0,-1.0) [-1|1] "" Vector__XXX
-
-BO_ 1706 Distance_km: 8 Vector__XXX
-  SG_ Distance_km : 0|24@1+ (0.01,0.0) [0|9999999] "km" Vector__XXX
-
-BO_ 1707 MG_i: 8 Vector__XXX
-  SG_ MG_i : 0|24@1+ (0.5,-100.0) [-100|500] "i" Vector__XXX
-
-BO_ 1708 MG_v: 8 Vector__XXX
-    SG_ MG_v : 0|24@1+ (0.25,-40.0) [-40|1000] "v" Vector__XXX
-
-BO_ 1709 MotorCommand_value: 8 Vector__XXX
+BO_ 1001 MotorCommand_value: 8 Vector__XXX
   SG_ MotorCommand_value : 0|24@1+ (0.5,-40.0) [-40|500] "" Vector__XXX
 
-BO_ 1710 Range_km: 8 Vector__XXX
-  SG_ Range_km : 0|24@1+ (0.5,0.0) [0|500] "km" Vector__XXX
+BO_ 2001 BatteryPack01Voltage: 8 Vector__XXX
+ SG_ Battery_electrical_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
 
-BO_ 1711 RefereceVehicleSpeed_kph: 8 Vector__XXX
-  SG_ RefereceVehicleSpeed_kph : 0|24@1+ (0.25,-320.0) [-320|320] "kph" Vector__XXX
+BO_ 2002 BatteryPack02Voltage: 8 Vector__XXX
+ SG_ Battery_electrical_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
 
-BO_ 1712 State_of_Charge_SoC: 8 Vector__XXX
- SG_ State_of_Charge_SoC : 0|24@1+ (0.01,0.0) [0|1] "SoC" Vector__XXX
+BO_ 3001 BatteryPack01Cell001state: 8 Vector__XXX
+ SG_ Cell_Temperature_C : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
 
-BO_ 1713 Power_kW: 8 Vector__XXX
- SG_ Power_kW : 0|24@1+ (0.01,-10.0) [-10|100] "kW" Vector__XXX
+BO_ 4001 BatteryPack02Cell001state: 8 Vector__XXX
+ SG_ Cell_Temperature_C : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
 
-BO_ 1714 dT_hr: 8 Vector__XXX
-  SG_ dT_hr : 0|24@1+ (0.01,0.0) [0|1000] "hr" Vector__XXX
 
-BO_ 1715 Energy_kWhr: 8 Vector__XXX
- SG_ Energy_kWhr : 0|24@1+ (0.01,-10.0) [-10|100] "kWhr" Vector__XXX
-
-BO_ 1716 Cumulative_Energy_Used_kWhr: 8 Vector__XXX
- SG_ Cumulative_Energy_Used_kWhr : 0|24@1+ (0.01,-10.0) [-10|100] "kWhr" Vector__XXX
+BO_ 5000 BMSRelay01Status: 8 Vector__XXX
+  SG_ RelayStatus : 0|24@1+ (0.01,0.0) [0|9999999] "km" Vector__XXX
 
 
 BA_DEF_ SG_  "SignalType" STRING ;
@@ -90,19 +62,12 @@ BA_DEF_ BO_  "GenMsgCycleTime" INT 0 10000;
 BA_DEF_DEF_  "SignalType" "";
 BA_DEF_DEF_  "SignalLongName" "";
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
-BA_ "GenMsgCycleTime" BO_ 1701 500;
-BA_ "GenMsgCycleTime" BO_ 1702 500;
-BA_ "GenMsgCycleTime" BO_ 1703 500;
-BA_ "GenMsgCycleTime" BO_ 1704 500;
-BA_ "GenMsgCycleTime" BO_ 1705 500;
-BA_ "GenMsgCycleTime" BO_ 1706 500;
-BA_ "GenMsgCycleTime" BO_ 1707 500;
-BA_ "GenMsgCycleTime" BO_ 1708 500;
-BA_ "GenMsgCycleTime" BO_ 1709 500;
-BA_ "GenMsgCycleTime" BO_ 1710 500;
-BA_ "GenMsgCycleTime" BO_ 1711 500;
-BA_ "GenMsgCycleTime" BO_ 1712 500;
-BA_ "GenMsgCycleTime" BO_ 1713 500;
-BA_ "GenMsgCycleTime" BO_ 1714 500;
-BA_ "GenMsgCycleTime" BO_ 1715 500;
-BA_ "GenMsgCycleTime" BO_ 1716 500;
+
+BA_ "GenMsgCycleTime" BO_ 1000 500;
+BA_ "GenMsgCycleTime" BO_ 1001 500;
+BA_ "GenMsgCycleTime" BO_ 2001 500;
+BA_ "GenMsgCycleTime" BO_ 2002 500;
+BA_ "GenMsgCycleTime" BO_ 3001 500;
+BA_ "GenMsgCycleTime" BO_ 4001 500;
+BA_ "GenMsgCycleTime" BO_ 5000 500;
+

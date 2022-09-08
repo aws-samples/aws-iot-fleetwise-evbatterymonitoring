@@ -14,12 +14,12 @@
     {
       "maxSampleCount": 1,
       "minimumSamplingIntervalMs": 100,
-      "name": "EVBatterySample.BMS.BatteryTemperature"
+      "name": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage"
     },
     {
       "maxSampleCount": 100,
       "minimumSamplingIntervalMs": 100,
-      "name": "EVBatterySample.Drivetrain.ActualVehicleSpeed"
+      "name": "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage"
     }
   ]
 }
