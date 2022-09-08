@@ -33,27 +33,26 @@ BS_:
 
 BU_:
 
-BO_ 1000 ActualVehicleSpeed_kph: 8 Vector__XXX
+BO_ 100 ActualVehicleSpeed_kph: 8 Vector__XXX
  SG_ ActualVehicleSpeed_kph : 0|24@1+ (0.5,0.0) [0|320] "kph" Vector__XXX
 
-BO_ 1001 MotorCommand_value: 8 Vector__XXX
+BO_ 101 MotorCommand_value: 8 Vector__XXX
   SG_ MotorCommand_value : 0|24@1+ (0.5,-40.0) [-40|500] "" Vector__XXX
 
-BO_ 2001 BatteryPack01Voltage: 8 Vector__XXX
- SG_ Battery_electrical_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
+BO_ 201 BatteryPack01Voltage: 8 Vector__XXX
+ SG_ BatteryPack01Voltage : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
 
-BO_ 2002 BatteryPack02Voltage: 8 Vector__XXX
- SG_ Battery_electrical_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
+BO_ 202 BatteryPack02Voltage: 8 Vector__XXX
+ SG_ BatteryPack02Voltage : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
 
-BO_ 3001 BatteryPack01Cell001state: 8 Vector__XXX
- SG_ Cell_Temperature_C : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
+BO_ 301 BatteryPack01Cell001state: 8 Vector__XXX
+ SG_ BatteryPack01Cell001state : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
 
-BO_ 4001 BatteryPack02Cell001state: 8 Vector__XXX
- SG_ Cell_Temperature_C : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
+BO_ 401 BatteryPack02Cell001state: 8 Vector__XXX
+ SG_ BatteryPack02Cell001state : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
 
-
-BO_ 5000 BMSRelay01Status: 8 Vector__XXX
-  SG_ RelayStatus : 0|24@1+ (0.01,0.0) [0|9999999] "km" Vector__XXX
+BO_ 500 BMSRelay01Status: 8 Vector__XXX
+  SG_ BMSRelay01Status : 0|24@1+ (0.01,0.0) [0|9999999] "km" Vector__XXX
 
 
 BA_DEF_ SG_  "SignalType" STRING ;
@@ -63,11 +62,11 @@ BA_DEF_DEF_  "SignalType" "";
 BA_DEF_DEF_  "SignalLongName" "";
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 
-BA_ "GenMsgCycleTime" BO_ 1000 500;
-BA_ "GenMsgCycleTime" BO_ 1001 500;
-BA_ "GenMsgCycleTime" BO_ 2001 500;
-BA_ "GenMsgCycleTime" BO_ 2002 500;
-BA_ "GenMsgCycleTime" BO_ 3001 500;
-BA_ "GenMsgCycleTime" BO_ 4001 500;
-BA_ "GenMsgCycleTime" BO_ 5000 500;
+BA_ "GenMsgCycleTime" BO_ 100 500;
+BA_ "GenMsgCycleTime" BO_ 101 500;
+BA_ "GenMsgCycleTime" BO_ 201 500;
+BA_ "GenMsgCycleTime" BO_ 202 500;
+BA_ "GenMsgCycleTime" BO_ 301 500;
+BA_ "GenMsgCycleTime" BO_ 401 500;
+BA_ "GenMsgCycleTime" BO_ 500 500;
 
