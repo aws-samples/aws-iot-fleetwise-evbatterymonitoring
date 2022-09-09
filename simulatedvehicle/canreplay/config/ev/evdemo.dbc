@@ -39,17 +39,17 @@ BO_ 100 ActualVehicleSpeed_kph: 8 Vector__XXX
 BO_ 101 MotorCommand_value: 8 Vector__XXX
   SG_ MotorCommand_value : 0|24@1+ (0.5,-40.0) [-40|500] "" Vector__XXX
 
-BO_ 201 BatteryPack01Voltage: 8 Vector__XXX
- SG_ BatteryPack01Voltage : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
+BO_ 201 BatteryPack01Voltage_v: 8 Vector__XXX
+ SG_ BatteryPack01Voltage_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
 
-BO_ 202 BatteryPack02Voltage: 8 Vector__XXX
- SG_ BatteryPack02Voltage : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
+BO_ 202 BatteryPack02Voltage_v: 8 Vector__XXX
+ SG_ BatteryPack02Voltage_v : 0|24@1+ (0.25,-100.0) [-100|1000] "v" Vector__XXX
 
-BO_ 301 BatteryPack01Cell001state: 8 Vector__XXX
- SG_ BatteryPack01Cell001state : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
+BO_ 301 BatteryPack01Cell001_temperature: 8 Vector__XXX
+ SG_ BatteryPack01Cell001_temperature : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
 
-BO_ 401 BatteryPack02Cell001state: 8 Vector__XXX
- SG_ BatteryPack02Cell001state : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
+BO_ 401 BatteryPack02Cell001_temperature: 8 Vector__XXX
+ SG_ BatteryPack02Cell001_temperature : 0|24@1+ (0.5,-40) [-40|87.5] "degC" Vector__XXX
 
 BO_ 500 BMSRelay01Status: 8 Vector__XXX
   SG_ BMSRelay01Status : 0|24@1+ (0.01,0.0) [0|9999999] "km" Vector__XXX

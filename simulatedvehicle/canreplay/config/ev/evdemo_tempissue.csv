@@ -1,4 +1,4 @@
-ActualVehicleSpeed_kph;MotorCommand_value;BatteryPack01Voltage_v;BatteryPack02Voltage_v;BatteryPack01Cell001state;BatteryPack01Cell002state;BMSRelay01Status
+ActualVehicleSpeed_kph;MotorCommand_value;BatteryPack01Voltage_v;BatteryPack02Voltage_v;BatteryPack01Cell001_temperature;BatteryPack02Cell001_temperature;BMSRelay01Status
 3.126852589;88.48605548;403.7250268;363.5148006;19.99975869;27.87125691;1.00
 7.601840598;109.7401591;398.5491251;366.7980745;20.00089875;27.87340611;1.00
 12.53949354;115.4737935;392.7410297;367.6968353;20.00965662;27.87934885;1.00
