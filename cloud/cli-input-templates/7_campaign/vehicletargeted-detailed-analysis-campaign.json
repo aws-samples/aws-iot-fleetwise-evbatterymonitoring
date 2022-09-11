@@ -16,43 +16,43 @@
   "spoolingMode": "TO_DISK",
   "signalsToCollect": [
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.Drivetrain.ActualVehicleSpeed"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.Drivetrain.MotorCommand"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.BMS.BatteryPack01.Cell001.CellTemperature"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.BMS.BatteryPack02.Cell001.CellTemperature"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "EVBatterySample.BMS.Relay01.Status"
     },
     {
-      "maxSampleCount": 100,
-      "minimumSamplingIntervalMs": 100,
+      "maxSampleCount": 1,
+
       "name": "OBD.EngineSpeed"
     }
   ]

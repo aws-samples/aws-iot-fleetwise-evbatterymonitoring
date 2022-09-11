@@ -1,0 +1,716 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 4,
+  "iteration": 1651487718349,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": "Amazon Timestream FleetWise",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "database": "FleetWiseDatabase\"",
+          "measure": "Vehicle.OBD.FuelLevel",
+          "queryType": "raw",
+          "rawQuery": "SELECT vehicleName, BIN(time, ${aggregationInterval}), avg(measure_value::${signalDataType}) AS \"average(${aggregationInterval})\", max(measure_value::double) AS \"max(${aggregationInterval})\", min(measure_value::double) AS \"minimum(${aggregationInterval})\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}'\nGROUP BY vehicleName,BIN(time, ${aggregationInterval}) \nORDER BY BIN(time, ${aggregationInterval})",
+          "refId": "A"
+        }
+      ],
+      "title": "Value history",
+      "type": "timeseries"
+    },
+    {
+      "cards": {
+        "cardPadding": null,
+        "cardRound": null
+      },
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateOranges",
+        "exponent": 0.5,
+        "mode": "spectrum"
+      },
+      "dataFormat": "timeseries",
+      "datasource": "Amazon Timestream FleetWise",
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "heatmap": {},
+      "hideZeroBuckets": false,
+      "highlightCards": true,
+      "id": 12,
+      "legend": {
+        "show": false
+      },
+      "reverseYBuckets": false,
+      "targets": [
+        {
+          "database": "\"FleetWiseDatabase\"",
+          "measure": "Vehicle.OBD.FuelLevel",
+          "queryType": "raw",
+          "rawQuery": "SELECT vehicleName, BIN(time, ${aggregationInterval}), avg(measure_value::${signalDataType}) AS \"Average in ${aggregationInterval}\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}'\nGROUP BY vehicleName,BIN(time, ${aggregationInterval}) \nORDER BY BIN(time, ${aggregationInterval})",
+          "refId": "A"
+        }
+      ],
+      "title": "Heatmap",
+      "tooltip": {
+        "show": true,
+        "showHistogram": false
+      },
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "xBucketNumber": null,
+      "xBucketSize": null,
+      "yAxis": {
+        "decimals": null,
+        "format": "short",
+        "logBase": 1,
+        "max": null,
+        "min": null,
+        "show": true,
+        "splitFactor": null
+      },
+      "yBucketBound": "auto",
+      "yBucketNumber": null,
+      "yBucketSize": null
+    },
+    {
+      "datasource": "Amazon Timestream FleetWise",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 9,
+      "options": {
+        "bucketOffset": 0,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "queryType": "raw",
+          "rawQuery": "SELECT avg(measure_value::${signalDataType}) AS \"value\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}' and $__timeFilter\nGROUP BY vehicleName,BIN(time, ${aggregationInterval}) \nORDER BY BIN(time, ${aggregationInterval})",
+          "refId": "A"
+        }
+      ],
+      "title": "Hisogram over time",
+      "type": "histogram"
+    },
+    {
+      "datasource": "Amazon Timestream FleetWise",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vehicleName"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 138
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 80
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 74
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Min"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 59
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Standard Deviation"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 114
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average 10s"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 79
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 14
+      },
+      "id": 14,
+      "options": {
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "database": "\"FleetWiseDatabase\"",
+          "measure": "Vehicle.OBD.FuelLevel",
+          "queryType": "raw",
+          "rawQuery": "SELECT  avg(measure_value::${signalDataType}) AS \"Average ${aggregationInterval}\", max(measure_value::double) AS \"Maximum\", min(measure_value::double) AS \"Minimum\", stddev(measure_value::double) AS \"Standard Deviation\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}' and measure_value::${signalDataType} > 0 and $__timeFilter\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Statistics ",
+      "type": "table"
+    },
+    {
+      "datasource": "Amazon Timestream FleetWise",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vehicleName"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 138
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 80
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 74
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Min"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 59
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Standard Deviation"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 114
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average 10s"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 79
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 21
+      },
+      "id": 13,
+      "options": {
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "database": "\"FleetWiseDatabase\"",
+          "measure": "Vehicle.OBD.FuelLevel",
+          "queryType": "raw",
+          "rawQuery": "SELECT vehicleName, BIN(time, ${aggregationInterval}) as \"Time bin\", avg(measure_value::${signalDataType}) AS \"Average ${aggregationInterval}\", max(measure_value::double) AS \"Max\", min(measure_value::double) AS \"Min\", stddev(measure_value::double) AS \"Standard Deviation\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}' and measure_value::${signalDataType} > 0 and $__timeFilter\nGROUP BY vehicleName,BIN(time, ${aggregationInterval}) \nORDER BY BIN(time, ${aggregationInterval})",
+          "refId": "A"
+        }
+      ],
+      "title": "Value history",
+      "type": "table"
+    },
+    {
+      "datasource": "Amazon Timestream FleetWise",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 28
+      },
+      "id": 7,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "last_timestamp"
+          }
+        ]
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "queryType": "raw",
+          "rawQuery": "SELECT (now()-max(time)) as last_timestamp \nFROM $__database.$__table \nwhere measure_name='Vehicle.OBD.ThrottlePosition'  \n",
+          "refId": "A"
+        }
+      ],
+      "title": "Age",
+      "type": "table"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 32,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "isNone": true,
+          "selected": true,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": "Amazon Timestream FleetWise",
+        "definition": "SELECT distinct(vehicleName) FROM \"FleetWiseDatabase\".\"FleetWiseTable\" ",
+        "description": "Id of the vehicle to query",
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Vehicle Id",
+        "multi": false,
+        "name": "vehicleName",
+        "options": [],
+        "query": "SELECT distinct(vehicleName) FROM \"FleetWiseDatabase\".\"FleetWiseTable\" ",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "isNone": true,
+          "selected": true,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": "Amazon Timestream FleetWise",
+        "definition": "SELECT measure_name  from \"FleetWiseDatabase\".\"FleetWiseTable\"",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Name of signal",
+        "multi": false,
+        "name": "signalName",
+        "options": [],
+        "query": "SELECT measure_name  from \"FleetWiseDatabase\".\"FleetWiseTable\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "5s",
+          "value": "5s"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "label": "Aggregation interval",
+        "name": "aggregationInterval",
+        "options": [
+          {
+            "selected": false,
+            "text": "100ms",
+            "value": "100ms"
+          },
+          {
+            "selected": false,
+            "text": "1s",
+            "value": "1s"
+          },
+          {
+            "selected": true,
+            "text": "5s",
+            "value": "5s"
+          },
+          {
+            "selected": false,
+            "text": "10s",
+            "value": "10s"
+          },
+          {
+            "selected": false,
+            "text": "20s",
+            "value": "20s"
+          },
+          {
+            "selected": false,
+            "text": "30s",
+            "value": "30s"
+          },
+          {
+            "selected": false,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": false,
+            "text": "3m",
+            "value": "3m"
+          },
+          {
+            "selected": false,
+            "text": "5m",
+            "value": "5m"
+          },
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          },
+          {
+            "selected": false,
+            "text": "60m",
+            "value": "60m"
+          }
+        ],
+        "query": "100ms, 1s, 5s, 10s, 20s, 30s, 1m, 3m, 5m, 30m, 60m",
+        "queryValue": "",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      },
+      {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "double",
+          "value": "double"
+        },
+        "description": "",
+        "error": null,
+        "hide": 0,
+        "label": "Signal data type",
+        "name": "signalDataType",
+        "options": [
+          {
+            "selected": true,
+            "text": "double",
+            "value": "double"
+          },
+          {
+            "selected": false,
+            "text": "bigint",
+            "value": "bigint"
+          }
+        ],
+        "query": "double,bigint",
+        "queryValue": "",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": ["5s", "10s", "20s30s", "1m", "5m", "30m", "60m"]
+  },
+  "timezone": "",
+  "title": "AWS IoT FleetWise Demo - Individual Signal Analysis",
+  "uid": "zLc-w_Q7k",
+  "version": 32
+}
