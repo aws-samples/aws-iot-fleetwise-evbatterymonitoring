@@ -365,14 +365,8 @@ Resources:
           # Download Battery Monitoring sample
 
           cd /home/ubuntu
-          if echo ${SourceUrlBatteryMonitoring} | grep -q 'github'; then
-            echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
-            sudo -u ubuntu git clone ${SourceUrl} aws-iot-fleetwise-evbatterymonitoring
-          else
-            echo "Installing via Wget sample from ${SourceUrlBatteryMonitoring}"
-            wget ${SourceUrlBatteryMonitoring}  -O /tmp/aws-iot-fleetwise-evbatterymonitoring.tar.gz
-            sudo -u ubuntu tar xvf /tmp/aws-iot-fleetwise-evbatterymonitoring.tar.gz
-          fi
+          echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
+          sudo -u ubuntu git clone ${SourceUrl}
 
 
           # Download source
