@@ -201,7 +201,7 @@ Resources:
 
           cd /home/ubuntu
           echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
-          sudo -u ubuntu git clone ${SourceUrl}
+          sudo -u ubuntu git clone ${SourceUrlBatteryMonitoring}"
 
           # Download source
           cd /home/ubuntu
@@ -366,7 +366,7 @@ Resources:
 
           cd /home/ubuntu
           echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
-          sudo -u ubuntu git clone ${SourceUrl}
+          sudo -u ubuntu git clone ${SourceUrlBatteryMonitoring}
 
 
           # Download source
