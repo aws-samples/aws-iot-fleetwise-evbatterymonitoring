@@ -28,7 +28,7 @@ Parameters:
   SourceUrlBatteryMonitoring:
     Description: Source Git clone URL for Battery Monitoring Sample repo (leave as default)
     Type: String
-    Default: https://temp-978572884825.s3.amazonaws.com/aws-iot-fleetwise-batterymonitoring.tar.gz
+    Default: https://github.com/aws-samples/aws-iot-fleetwise-evbatterymonitoring
   Ec2KeyPair:
     Description: Name of SSH key pair (leave blank for none)
     Type: String
