@@ -3,10 +3,11 @@ The files in this folder have the purpoe to simulate a simplified overcurrent sc
 
 ## Scenario description
 
-t 1 to 60 healthy
-t 61 to 120 increase
-t 121 BatteryPack01ShuntPlusCurrent and BatteryPack01Cell001Temperature are above threshold
-t 181 to 300 healthy
+- t 1 to 60 : healthy battery state, vehicle is inreasing speed
+- t 61 to 120 increase: first manifestation of overcurrent issues, however current and temperature values are below criticality threshold
+- t 121 BatteryPack01ShuntPlusCurrent and BatteryPack01Cell001Temperature are above threshold, vehicle stops
+- t 122 to 180: battery repair or replacement takes place
+- t 181 to 300: vehicle starts again
 
 ## Signal names
 1. ActualVehicleSpeed_kph
