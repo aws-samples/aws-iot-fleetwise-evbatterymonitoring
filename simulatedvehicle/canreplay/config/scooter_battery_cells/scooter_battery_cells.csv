@@ -1,3 +1,0 @@
-t,cell001.temperature_c,cell001.voltage_v,cell001.state_of_charge_p,cell002.temperature_c,cell002.voltage_v,cell002.state_of_charge_p,
-1,20.1,1.5,20.1,21.2,1.1,90.1,
-2,20,1,20,21,1,90,
