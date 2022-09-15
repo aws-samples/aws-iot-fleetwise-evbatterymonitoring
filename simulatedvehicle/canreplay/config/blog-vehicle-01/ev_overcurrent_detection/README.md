@@ -17,8 +17,8 @@ The files in this folder have the purpoe to simulate a simplified overcurrent sc
 5. BatteryPack01ShuntMinusCurrentQualifier_enum
 6. BatteryPack01RelayStatus_enum
 7. BatteryPack01RelayStatusQualifier_enum
-8. BatteryPack01BatteryPack01VoltagePlus_v
-9. BatteryPack01BatteryPack01VoltageMinus_v
+8. BatteryPack01VoltagePlus_v
+9. BatteryPack01VoltageMinus_v
 10. BateryPack01Cell001Temperature_c
 
 

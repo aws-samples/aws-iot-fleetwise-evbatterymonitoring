@@ -1,8 +1,10 @@
 #/bin/bash
 set -e
 
-# Install envsubst for Amazon Linux 2
-sudo yum install gettext -y
+if [[ $(uname -a) == *"axmazon"* ]]; then
+  # Install envsubst for Amazon Linux 2
+  sudo yum install gettext -y
+fi
 
 # Check for envsubst
 if ! command -v envsubst &> /dev/null

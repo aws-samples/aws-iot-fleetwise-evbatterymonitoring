@@ -42,25 +42,9 @@
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
     },
-    {
-      "canSignal": {
-        "name": "MotorCommand_value",
-        "factor": 0.5,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 101,
-        "offset": -40.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.Drivetrain.MotorCommand",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
 
     {
       "canSignal": {
-        "name": "BatteryPackVoltage",
         "factor": 0.25,
         "isBigEndian": false,
         "isSigned": false,
@@ -69,14 +53,13 @@
         "offset": -100.0,
         "startBit": 0
       },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage",
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltagePlus",
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
     },
 
     {
       "canSignal": {
-        "name": "BatteryPackVoltage",
         "factor": 0.25,
         "isBigEndian": false,
         "isSigned": false,
@@ -85,14 +68,13 @@
         "offset": -100.0,
         "startBit": 0
       },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage",
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
     },
 
     {
       "canSignal": {
-        "name": "CellTemperature",
         "factor": 0.5,
         "isBigEndian": false,
         "isSigned": false,
@@ -108,23 +90,6 @@
 
     {
       "canSignal": {
-        "name": "CellTemperature",
-        "factor": 0.5,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 401,
-        "offset": -40.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.Cell001.CellTemperature",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
-    {
-      "canSignal": {
-        "name": "RelayStatus",
         "factor": 0.01,
         "isBigEndian": false,
         "isSigned": false,
@@ -134,6 +99,21 @@
         "startBit": 0
       },
       "fullyQualifiedName": "EVBatterySample.BMS.Relay01.Status",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+
+    {
+      "canSignal": {
+        "factor": 0.01,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 501,
+        "offset": 0.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.Relay01.StatusQualifier_enum",
       "interfaceId": "1",
       "type": "CAN_SIGNAL"
     },
@@ -153,6 +133,62 @@
         "startByte": 0
       },
       "type": "OBD_SIGNAL"
+    },
+    {
+      "canSignal": {
+        "factor": 0.01,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 600,
+        "offset": 0.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrent_a",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+    {
+      "canSignal": {
+        "factor": 0.01,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 601,
+        "offset": 0.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrent_a",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+    {
+      "canSignal": {
+        "factor": 0.01,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 602,
+        "offset": 0.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrentQualifier_enum",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
+    },
+    {
+      "canSignal": {
+        "factor": 0.01,
+        "isBigEndian": false,
+        "isSigned": false,
+        "length": 24,
+        "messageId": 603,
+        "offset": 0.0,
+        "startBit": 0
+      },
+      "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrentQualifier_enum",
+      "interfaceId": "1",
+      "type": "CAN_SIGNAL"
     }
   ]
 }

@@ -252,3 +252,8 @@ upload.sh
 cloud/cli-input-templates-full/**
 cloud/cli-inputs/**
 simulatedvehicle/canreplay/config/ev_overcurrent_detection/~$ev_overcurrent_scenario.xlsx
+simulatedvehicle/canreplay/config/ev_overcurrent_detection/README.md
+certs/*
+certs/**
+*.pem
+*.key

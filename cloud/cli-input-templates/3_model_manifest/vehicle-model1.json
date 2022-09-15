@@ -4,15 +4,19 @@
   "description": "Sample vehicle model 1",
   "nodes": [
     "EVBatterySample.Drivetrain.ActualVehicleSpeed",
-    "EVBatterySample.Drivetrain.MotorCommand",
 
-    "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage",
+    "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltagePlus",
+    "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
+
     "EVBatterySample.BMS.BatteryPack01.Cell001.CellTemperature",
 
-    "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage",
-    "EVBatterySample.BMS.BatteryPack02.Cell001.CellTemperature",
-
     "EVBatterySample.BMS.Relay01.Status",
+    "EVBatterySample.BMS.Relay01.StatusQualifier_enum",
+
+    "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrent_a",
+    "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrentQualifier_enum",
+    "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrent_a",
+    "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrentQualifier_enum",
 
     "OBD.EngineSpeed",
 

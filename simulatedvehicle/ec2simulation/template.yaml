@@ -270,7 +270,7 @@ Resources:
           ./tools/install-fwe.sh
 
           ROOTDIR=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay
-          sudo \cp -f $ROOTDIR/service/evcansimulation.service /etc/systemd/system/evcansimulation.service
+          sudo \cp -f $ROOTDIR/service/evcansimulation.blog-vehicle-01.service /etc/systemd/system/evcansimulation.service
 
           sudo systemctl enable evcansimulation.service
           sudo systemctl start evcansimulation.service
@@ -436,7 +436,7 @@ Resources:
           ./tools/install-fwe.sh
 
           ROOTDIR=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay
-          sudo \cp -f $ROOTDIR/service/evcansimulation.service /etc/systemd/system/evcansimulation.service
+          sudo \cp -f $ROOTDIR/service/evcansimulation.blog-vehicle-02.service /etc/systemd/system/evcansimulation.service
 
           sudo systemctl enable evcansimulation.service
           sudo systemctl start evcansimulation.service

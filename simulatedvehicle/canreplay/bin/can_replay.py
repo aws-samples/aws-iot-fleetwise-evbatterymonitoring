@@ -81,6 +81,9 @@ while True:
         # Iterate over all signal names in the CSV file
         for signal_name in df.columns:
 
+            if signal_name == "t":
+                continue
+
             signal_value = float(getattr(device_row, signal_name))
             logger.info(
                 f"[iteration {count_successfull_files}, row {count_successfull_rows}] Setting CAN {signal_name} to value {signal_value}")

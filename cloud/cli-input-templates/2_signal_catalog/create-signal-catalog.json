@@ -72,7 +72,7 @@
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.Drivetrain.MotorCommand",
+        "fullyQualifiedName": "EVBatterySample.BMS.Relay01.StatusQualifier_enum",
         "max": 500.0,
         "min": -40.0,
 
@@ -89,21 +89,11 @@
         "unit": "degC"
       }
     },
-    {
-      "sensor": {
-        "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.Cell001.CellTemperature",
-        "max": 120,
-        "min": -40.0,
-
-        "unit": "degC"
-      }
-    },
 
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltage",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltagePlus",
         "max": 1000.0,
         "min": -100.0,
 
@@ -113,13 +103,14 @@
     {
       "sensor": {
         "dataType": "DOUBLE",
-        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack02.BatteryPackVoltage",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
         "max": 1000.0,
         "min": -100.0,
 
         "unit": "v"
       }
     },
+
     {
       "sensor": {
         "dataType": "DOUBLE",
@@ -154,6 +145,46 @@
         "description": "PID 0C - Engine speed measured as rotations per minute",
         "fullyQualifiedName": "OBD.EngineSpeed",
         "unit": "rpm"
+      }
+    },
+    {
+      "sensor": {
+        "dataType": "DOUBLE",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrent_a",
+        "max": 1000.0,
+        "min": 0.0,
+
+        "unit": "a"
+      }
+    },
+    {
+      "sensor": {
+        "dataType": "DOUBLE",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrent_a",
+        "max": 1000.0,
+        "min": 0.0,
+
+        "unit": "a"
+      }
+    },
+    {
+      "sensor": {
+        "dataType": "DOUBLE",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrentQualifier_enum",
+        "max": 1000.0,
+        "min": 0.0,
+
+        "unit": "a"
+      }
+    },
+    {
+      "sensor": {
+        "dataType": "DOUBLE",
+        "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrentQualifier_enum",
+        "max": 1000.0,
+        "min": 0.0,
+
+        "unit": "a"
       }
     }
   ]
