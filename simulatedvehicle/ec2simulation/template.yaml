@@ -113,6 +113,7 @@ Resources:
     Properties:
       Roles:
         - !Ref Ec2ServiceRole
+
   Ec2Instance1:
     Type: AWS::EC2::Instance
     CreationPolicy:
@@ -167,7 +168,7 @@ Resources:
 
           # On error, signal back to cfn:
           error_handler() {
-            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance1 --region ${AWS::Region}
+            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance2 --region ${AWS::Region}
           }
           trap error_handler ERR
 
@@ -201,7 +202,8 @@ Resources:
 
           cd /home/ubuntu
           echo "Installing via Git sample from ${SourceUrlBatteryMonitoring}"
-          sudo -u ubuntu git clone ${SourceUrlBatteryMonitoring}"
+          sudo -u ubuntu git clone ${SourceUrlBatteryMonitoring}
+
 
           # Download source
           cd /home/ubuntu
@@ -225,15 +227,15 @@ Resources:
           # Install FWE credentials and config file
           mkdir /etc/aws-iot-fleetwise
           mkdir /var/aws-iot-fleetwise
-          echo -n "${IoTThing1.certificatePem}" > /etc/aws-iot-fleetwise/certificate.pem
-          echo -n "${IoTThing1.privateKey}" > /etc/aws-iot-fleetwise/private-key.key
+          echo -n "${IoTThing2.certificatePem}" > /etc/aws-iot-fleetwise/certificate.pem
+          echo -n "${IoTThing2.privateKey}" > /etc/aws-iot-fleetwise/private-key.key
           if ((${FleetSize}==1)); then
             echo "Configuring ${AWS::StackName}..."
             ./tools/configure-fwe.sh \
               --input-config-file "configuration/static-config.json" \
               --output-config-file "/etc/aws-iot-fleetwise/config-0.json" \
               --vehicle-name "blog-vehicle-01" \
-              --endpoint-url "${IoTThing1.iotEndpoint}" \
+              --endpoint-url "${IoTThing2.iotEndpoint}" \
               --topic-prefix '${IoTMqttTopicPrefix}' \
               --can-bus0 "vcan0"
           else
@@ -249,7 +251,7 @@ Resources:
                     --input-config-file "configuration/static-config.json" \
                     --output-config-file "/etc/aws-iot-fleetwise/config-$((i+j)).json" \
                     --vehicle-name "blog-vehicle-$((i+j))" \
-                    --endpoint-url "${IoTThing1.iotEndpoint}" \
+                    --endpoint-url "${IoTThing2.iotEndpoint}" \
                     --topic-prefix '${IoTMqttTopicPrefix}' \
                     --can-bus0 "vcan$((i+j))" \
                     --persistency-path "/var/aws-iot-fleetwise/fwe$((i+j))"; \
