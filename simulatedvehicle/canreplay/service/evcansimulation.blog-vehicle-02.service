@@ -1,0 +1,12 @@
+[Unit]
+Description=CAN Simulator
+
+[Service]
+Restart=always
+User=ubuntu
+RestartSec=1
+ExecStart=/bin/bash /home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay/service/start_simulation.sh blog-vehicle-02
+WorkingDirectory=/home/ubuntu/aws-iot-fleetwise-evbatterymonitoring/simulatedvehicle/canreplay/service
+
+[Install]
+WantedBy=multi-user.target
