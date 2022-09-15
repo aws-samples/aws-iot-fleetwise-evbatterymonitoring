@@ -168,7 +168,7 @@ Resources:
 
           # On error, signal back to cfn:
           error_handler() {
-            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance2 --region ${AWS::Region}
+            /opt/aws/bin/cfn-signal --success false --stack ${AWS::StackName} --resource Ec2Instance1 --region ${AWS::Region}
           }
           trap error_handler ERR
 
