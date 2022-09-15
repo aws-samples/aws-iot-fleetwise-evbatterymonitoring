@@ -2,8 +2,8 @@
 aws iotfleetwise delete-vehicle --vehicle-name blog-vehicle-01
 aws iotfleetwise delete-vehicle --vehicle-name blog-vehicle-02
 
-aws iotfleetwise delete-campaign --name fleettargeted-monitoring-campaign
-aws iotfleetwise delete-campaign --name vehicletargeted-detailed-analysis-campaign
+aws iotfleetwise delete-campaign --name conditional-snapshot-campaign
+aws iotfleetwise delete-campaign --name continious-monitoring-campaign
 
 aws iotfleetwise delete-fleet --fleet-id blog-fleet
 
