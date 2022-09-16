@@ -83,7 +83,7 @@
       "sensor": {
         "dataType": "DOUBLE",
         "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.Cell001.CellTemperature",
-        "max": 120,
+        "max": 500,
         "min": -40.0,
 
         "unit": "degC"
