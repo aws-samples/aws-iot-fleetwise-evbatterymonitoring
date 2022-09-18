@@ -695,9 +695,9 @@ Mappings:
       AMIID: ami-0327006c87b23e535
   FleetSizeEc2InstanceTypeMap:
     "1":
-      InstanceType: m6g.8xlarge
+      InstanceType: m6g.xlarge
     "2":
-      InstanceType: m6g.8xlarge
+      InstanceType: m6g.2xlarge
     "10":
       InstanceType: m6g.16xlarge
     "100":
@@ -713,7 +713,7 @@ Outputs:
   Ec2Instance1SSH:
     Condition: KeyPairSpecifiedCondition
     Description: "EC2 instance 1 SSH access command"
-    Value: !Sub ssh -i ${Ec2KeyPair}.pem ubuntu@${Ec2Instance1.PublicIp}
+    Value: !Sub ssh -i ~/${Ec2KeyPair}.pem ubuntu@${Ec2Instance1.PublicIp}
 
   Ec2Instance2PublicIp:
     Condition: KeyPairSpecifiedCondition
@@ -723,4 +723,4 @@ Outputs:
   Ec2Instance2SSH:
     Condition: KeyPairSpecifiedCondition
     Description: "EC2 instance 2 SSH access command"
-    Value: !Sub ssh -i ${Ec2KeyPair}.pem ubuntu@${Ec2Instance2.PublicIp}
+    Value: !Sub ssh -i ~/${Ec2KeyPair}.pem ubuntu@${Ec2Instance2.PublicIp}
