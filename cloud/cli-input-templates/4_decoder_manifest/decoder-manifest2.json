@@ -89,36 +89,6 @@
     },
 
     {
-      "canSignal": {
-        "factor": 0.01,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 500,
-        "offset": 0.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.Relay01.Status",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
-    {
-      "canSignal": {
-        "factor": 0.01,
-        "isBigEndian": false,
-        "isSigned": false,
-        "length": 24,
-        "messageId": 501,
-        "offset": 0.0,
-        "startBit": 0
-      },
-      "fullyQualifiedName": "EVBatterySample.BMS.Relay01.StatusQualifier_enum",
-      "interfaceId": "1",
-      "type": "CAN_SIGNAL"
-    },
-
-    {
       "fullyQualifiedName": "OBD.EngineSpeed",
       "interfaceId": "2",
       "obdSignal": {
