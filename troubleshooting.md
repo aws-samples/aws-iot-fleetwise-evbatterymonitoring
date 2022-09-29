@@ -26,6 +26,15 @@ Please perform the followign actions:
 2. Review the events and identify events with the status indicating an error, e.g. CREATE_FAILED
 3. Review the "Status reason column" to identify possible root cause.
 
+## Failure to create EC2 instancw with error message "request for accessing resources in this region is being validated"
+
+**Symptoms:** you see an error `"Your request for accessing resources in this region is being validated, and you will not be able to launch additional resources in this region until the validation is complete. We will notify you by email once your request has been validated. While normally resolved within minutes, please allow up to 4 hours for this process to complete. If the issue still persists, please let us know by writing to aws-verification@amazon.com for further assistance."`
+
+**Resolution:**
+
+1. Please await confirmation mail for validation completion
+2. Please delete the stack
+3. Please restart the stack deployment
 
 ## Troubleshooting other issues
 
