@@ -56,9 +56,8 @@ BO_ 500 BMSRelay01Status_enum: 8 Vector__XXX
 BO_ 501 BMSRelay01StatusQualifier_enum: 8 Vector__XXX
   SG_ BMSRelay01StatusQualifier : 0|24@1+ (1,0.0) [0|5] "qualifier" Vector__XXX
 
-
 BO_ 600 BatteryPack01ShuntPlusCurrent_a: 8 Vector__XXX
-  SG_ BatteryPack01ShuntPlusCurrent_a : 0|24@1+ (0.01,0.0) [0|10000] "amp" Vector__XXX
+  SG_ BatteryPack01ShuntPlusCurrent_a : 8|16@1+ (0.02,5.0) [0|10000] "amp" Vector__XXX
 
 BO_ 601 BatteryPack01ShuntMinusCurrent_a: 8 Vector__XXX
   SG_ BatteryPack01ShuntMinusCurrent_a : 0|24@1+ (0.01,0.0) [0|10000] "amp" Vector__XXX

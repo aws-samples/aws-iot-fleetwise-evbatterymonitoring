@@ -134,15 +134,16 @@
       },
       "type": "OBD_SIGNAL"
     },
+
     {
       "canSignal": {
-        "factor": 0.01,
+        "factor": 0.02,
         "isBigEndian": false,
         "isSigned": false,
-        "length": 24,
+        "length": 16,
         "messageId": 600,
-        "offset": 0.0,
-        "startBit": 0
+        "offset": 5.0,
+        "startBit": 8
       },
       "fullyQualifiedName": "EVBatterySample.BMS.BatteryPack01.ShuntPlusCurrent_a",
       "interfaceId": "1",
