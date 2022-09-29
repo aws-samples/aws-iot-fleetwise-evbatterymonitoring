@@ -19,21 +19,13 @@
       "name": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
       "maxSampleCount": 1
     },
-    {
-      "name": "EVBatterySample.BMS.Relay01.StatusQualifier_enum",
-      "maxSampleCount": 1
-    },
+
     {
       "name": "EVBatterySample.Drivetrain.ActualVehicleSpeed",
       "maxSampleCount": 1
     },
     {
       "name": "EVBatterySample.BMS.BatteryPack01.Cell001.CellTemperature",
-      "maxSampleCount": 1
-    },
-
-    {
-      "name": "EVBatterySample.BMS.Relay01.Status",
       "maxSampleCount": 1
     },
     {

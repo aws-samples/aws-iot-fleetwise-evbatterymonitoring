@@ -19,7 +19,6 @@
     "EVBatterySample.BMS.BatteryPack01.ShuntMinusCurrentQualifier_enum",
 
     "OBD.EngineSpeed",
-
     "VehicleVIN"
   ]
 }
