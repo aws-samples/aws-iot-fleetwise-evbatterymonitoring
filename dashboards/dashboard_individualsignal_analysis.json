@@ -21,15 +21,17 @@
   "description": "",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
-  "iteration": 1651487718349,
+  "id": 2,
+  "iteration": 1665395876162,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": "Amazon Timestream FleetWise",
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "uPNB9P4Vk"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -94,26 +96,29 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "single"
+          "mode": "single",
+          "sort": "none"
         }
       },
       "targets": [
         {
-          "database": "FleetWiseDatabase\"",
-          "measure": "Vehicle.OBD.FuelLevel",
+          "database": "\"FleetWiseDatabase\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "uPNB9P4Vk"
+          },
+          "measure": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
           "queryType": "raw",
           "rawQuery": "SELECT vehicleName, BIN(time, ${aggregationInterval}), avg(measure_value::${signalDataType}) AS \"average(${aggregationInterval})\", max(measure_value::double) AS \"max(${aggregationInterval})\", min(measure_value::double) AS \"minimum(${aggregationInterval})\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}'\nGROUP BY vehicleName,BIN(time, ${aggregationInterval}) \nORDER BY BIN(time, ${aggregationInterval})",
-          "refId": "A"
+          "refId": "A",
+          "table": "\"FleetWiseTable\""
         }
       ],
       "title": "Value history",
       "type": "timeseries"
     },
     {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
+      "cards": {},
       "color": {
         "cardColor": "#b4ff00",
         "colorScale": "sqrt",
@@ -122,7 +127,10 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": "Amazon Timestream FleetWise",
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "uPNB9P4Vk"
+      },
       "gridPos": {
         "h": 6,
         "w": 12,
@@ -140,10 +148,15 @@
       "targets": [
         {
           "database": "\"FleetWiseDatabase\"",
-          "measure": "Vehicle.OBD.FuelLevel",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "uPNB9P4Vk"
+          },
+          "measure": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
           "queryType": "raw",
           "rawQuery": "SELECT vehicleName, BIN(time, ${aggregationInterval}), avg(measure_value::${signalDataType}) AS \"Average in ${aggregationInterval}\"\nFROM $__database.$__table \nWHERE measure_name = '${signalName}'  and vehicleName = '${vehicleName}'\nGROUP BY vehicleName,BIN(time, ${aggregationInterval}) \nORDER BY BIN(time, ${aggregationInterval})",
-          "refId": "A"
+          "refId": "A",
+          "table": "\"FleetWiseTable\""
         }
       ],
       "title": "Heatmap",
@@ -155,23 +168,18 @@
       "xAxis": {
         "show": true
       },
-      "xBucketNumber": null,
-      "xBucketSize": null,
       "yAxis": {
-        "decimals": null,
         "format": "short",
         "logBase": 1,
-        "max": null,
-        "min": null,
-        "show": true,
-        "splitFactor": null
+        "show": true
       },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
+      "yBucketBound": "auto"
     },
     {
-      "datasource": "Amazon Timestream FleetWise",
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "uPNB9P4Vk"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -230,7 +238,10 @@
       "type": "histogram"
     },
     {
-      "datasource": "Amazon Timestream FleetWise",
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "uPNB9P4Vk"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -338,10 +349,17 @@
       },
       "id": 14,
       "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "8.2.5",
+      "pluginVersion": "8.4.7",
       "targets": [
         {
           "database": "\"FleetWiseDatabase\"",
@@ -355,7 +373,10 @@
       "type": "table"
     },
     {
-      "datasource": "Amazon Timestream FleetWise",
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "uPNB9P4Vk"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -463,10 +484,17 @@
       },
       "id": 13,
       "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "8.2.5",
+      "pluginVersion": "8.4.7",
       "targets": [
         {
           "database": "\"FleetWiseDatabase\"",
@@ -480,7 +508,10 @@
       "type": "table"
     },
     {
-      "datasource": "Amazon Timestream FleetWise",
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "uPNB9P4Vk"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -515,6 +546,13 @@
       },
       "id": 7,
       "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
         "showHeader": true,
         "sortBy": [
           {
@@ -523,7 +561,7 @@
           }
         ]
       },
-      "pluginVersion": "8.2.5",
+      "pluginVersion": "8.4.7",
       "targets": [
         {
           "queryType": "raw",
@@ -536,23 +574,23 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 32,
+  "schemaVersion": 35,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "isNone": true,
-          "selected": true,
-          "text": "None",
-          "value": ""
+          "selected": false,
+          "text": "blog-vehicle-02",
+          "value": "blog-vehicle-02"
         },
-        "datasource": "Amazon Timestream FleetWise",
+        "datasource": {
+          "type": "grafana-timestream-datasource",
+          "uid": "uPNB9P4Vk"
+        },
         "definition": "SELECT distinct(vehicleName) FROM \"FleetWiseDatabase\".\"FleetWiseTable\" ",
         "description": "Id of the vehicle to query",
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Vehicle Id",
@@ -567,17 +605,16 @@
         "type": "query"
       },
       {
-        "allValue": null,
         "current": {
-          "isNone": true,
-          "selected": true,
-          "text": "None",
-          "value": ""
+          "selected": false,
+          "text": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus",
+          "value": "EVBatterySample.BMS.BatteryPack01.BatteryPackVoltageMinus"
         },
-        "datasource": "Amazon Timestream FleetWise",
+        "datasource": {
+          "type": "grafana-timestream-datasource",
+          "uid": "uPNB9P4Vk"
+        },
         "definition": "SELECT measure_name  from \"FleetWiseDatabase\".\"FleetWiseTable\"",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Name of signal",
@@ -600,8 +637,6 @@
           "text": "5s",
           "value": "5s"
         },
-        "description": null,
-        "error": null,
         "hide": 0,
         "label": "Aggregation interval",
         "name": "aggregationInterval",
@@ -678,7 +713,6 @@
           "value": "double"
         },
         "description": "",
-        "error": null,
         "hide": 0,
         "label": "Signal data type",
         "name": "signalDataType",
@@ -707,10 +741,19 @@
     "to": "now"
   },
   "timepicker": {
-    "refresh_intervals": ["5s", "10s", "20s30s", "1m", "5m", "30m", "60m"]
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "20s30s",
+      "1m",
+      "5m",
+      "30m",
+      "60m"
+    ]
   },
   "timezone": "",
   "title": "AWS IoT FleetWise Demo - Individual Signal Analysis",
   "uid": "zLc-w_Q7k",
-  "version": 32
+  "version": 5,
+  "weekStart": ""
 }
