@@ -48,7 +48,7 @@ class canigen:
             for msg in self.__db.messages:
                 for sig in msg.signals:
                     self.__sig_names.append(sig.name)
-                    self.__values['sig'][sig.name] = 0.0 if sig.initial is None else sig.initial
+                    self.__values['sig'][sig.name] = sig.offset if sig.initial is None else sig.initial
         if not values_filename is None:
             self.__values = self.__load_json(values_filename)
         self.__obd_config = {}
