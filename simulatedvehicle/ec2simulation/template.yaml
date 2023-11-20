@@ -24,7 +24,7 @@ Parameters:
   SourceRef:
     Description: Source Git branch, tag or commit ID (leave blank for HEAD)
     Type: String
-    Default: ""
+    Default: "v1.0.3"
   SourceUrlBatteryMonitoring:
     Description: Source Git clone URL for Battery Monitoring Sample repo (leave as default)
     Type: String
@@ -216,7 +216,7 @@ Resources:
           fi
           cd aws-iot-fleetwise-edge
           if [ '${SourceRef}' != '' ]; then
-            git checkout ${SourceRef}
+            sudo -u ubuntu git checkout ${SourceRef}
           fi
 
           # Install SocketCAN modules:
@@ -382,7 +382,7 @@ Resources:
           fi
           cd aws-iot-fleetwise-edge
           if [ '${SourceRef}' != '' ]; then
-            git checkout ${SourceRef}
+            sudo -u ubuntu git checkout ${SourceRef}
           fi
 
           # Install SocketCAN modules:
