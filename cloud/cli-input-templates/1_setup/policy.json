@@ -4,13 +4,13 @@
     {
       "Sid": "timestreamIngestion",
       "Effect": "Allow",
-      "Action": ["timestream:WriteRecords", "timestream:Select"],
+	"Action": ["timestream:WriteRecords", "timestream:Select", "timestream:DescribeTable", "timestream:ListMeasures"],
       "Resource": "arn:aws:timestream:*:${AWS_ACCOUNT_ID}:database/FleetWiseDatabase/table/FleetWiseTable"
     },
     {
       "Sid": "timestreamDescribeEndpoint",
       "Effect": "Allow",
-      "Action": ["timestream:DescribeEndpoints"],
+	"Action": ["timestream:DescribeEndpoints", "timestream:SelectValues", "timestream:CancelQuery"],
       "Resource": "*"
     }
   ]
