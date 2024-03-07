@@ -7,6 +7,14 @@
       "periodMs": 30000
     }
   },
+  "dataDestinationConfigs":[
+    {
+      "timestreamConfig": {
+	"executionRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/AWSIoTFleetWiseServiceRole",
+	"timestreamTableArn": "arn:aws:timestream:${AWS_REGION}:${AWS_ACCOUNT_ID}:database/FleetWiseDatabase/table/FleetWiseTable"
+      }
+    }
+  ],
   "diagnosticsMode": "OFF",
   "dataExtraDimensions": ["VehicleVIN"],
   "spoolingMode": "TO_DISK",
